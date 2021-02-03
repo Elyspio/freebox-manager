@@ -1,5 +1,5 @@
-import {AuthenticationApi} from "./authentication";
+import {FreeboxApi} from "./freebox/freebox";
 
 export const Apis = {
-    authentication: new AuthenticationApi({basePath: "https://elyspio.fr/authentication"})
+    freebox: new FreeboxApi()
 }

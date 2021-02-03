@@ -1,4 +1,4 @@
-import {TestService} from "./test";
+import {TestService} from "./freebox";
 import {ApiServices} from "./Api";
 import {EnvironmentService} from "./Environments";
 

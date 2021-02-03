@@ -1,9 +1,12 @@
-import {EnvironmentsApi, ExampleApi} from "./back"
-import store from "../../view/store";
+import {AccessPointsApi, DevicesApi, EnvironmentsApi} from "./back"
+import store from "../../store";
 
 type Apis = {
     core: {
-        example: ExampleApi,
+        freebox: {
+            accessPoints: AccessPointsApi,
+            device: DevicesApi
+        }
         environments: EnvironmentsApi
     }
 }
@@ -19,7 +22,10 @@ export function createApis(): Apis {
     const backend = getEnv("BACKEND_HOST", "http://localhost:4000");
     Apis = {
         core: {
-            example: new ExampleApi({basePath: backend}),
+            freebox: {
+                accessPoints: new AccessPointsApi({basePath: backend}),
+                device: new DevicesApi({basePath: backend})
+            },
             environments: new EnvironmentsApi({basePath: backend})
         }
     }
